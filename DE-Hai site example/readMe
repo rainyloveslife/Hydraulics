@@ -1,1 +1,34 @@
+Overview of hydraulics traits work, use one site as an example
+
+Site: DE-Hai
+Forcing: FLUXNET
+Time: 2000-2006
+
+Experiments 1: QUINCY development
+Experiments 2: QUINCY hydraulics
+Observations: FLUXNET DE-Hai
+
+--
+Variables: GPP, NPP, ET
+
+Section One: Evaluate the simulation against the observation
+ -1. Compare varaibles (EX1, EX2, OBS) == time series
+ -2. Select the best parameter combination == Taylor diagram
+ -3. Compare EX2 with OBS == Scatter 
+
+--
+Variables: SWC, LWP, SWP
+
+Section Two: Simulated leaf and stem water potential 
+ -1. Annual pattern of LWP, SWP, SWC
+ -2. Relationship between LWP, SWP, SWC
+ -3. Relationship between LWP, SWP, SWC with external variables (VPD,PRE...)
+
+--
+Variables: PLC, Mortality, sai50
+
+Section Three: Hydraulic failure simulation
+ -1. 
+ -2.
+ -3.
 
