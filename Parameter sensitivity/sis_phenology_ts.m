@@ -15,8 +15,10 @@ gpp_sim=ncread('/Users/zeyu/remote/BSI/work_scratch/zduanmu/src/QPy/examples/sen
 window=3;
 gpp_sim_ts=Cal_sim_halfhour_day(gpp_sim,window);
 
-folderName={'LH-t_air_senescence/','LH-k_gddreq/','LH-k_gdd_dormance/','LH-gdd_req_max/','LH-min_leaf_age/','LH-k_gddreq_Tsen_leafage/','LH-Tsen_leafage/'};
-titleName={'t air senescence','k gdd dormance&gdd req max','k gdd dormance','gdd req max','min leaf age','kgdd&gddreq&Tsen&minleafage',' Tsen&minleafage'};
+% folderName={'LH-t_air_senescence/','LH-k_gddreq/','LH-k_gdd_dormance/','LH-gdd_req_max/','LH-min_leaf_age/','LH-k_gddreq_Tsen_leafage/','LH-Tsen_leafage/'};
+% titleName={'t air senescence','k gdd dormance&gdd req max','k gdd dormance','gdd req max','min leaf age','kgdd&gddreq&Tsen&minleafage',' Tsen&minleafage'};
+folderName={'LH-sos/','LH-gddthreshold/'};
+titleName={'kgdd&gddreq&gddthres','gdd threshold'};
 pp_scaler=0.963;
 savepath='/Users/zeyu/remote/BSI/work_scratch/zduanmu/phd/implement hydraulics/phenology/parameter analysis/';
 
@@ -42,7 +44,8 @@ for iff=1:numel(folderName)
     
     hold on
     for i=1:size(bestcom,2)
-        fileName=strcat(rootPath,folderPath,num2str(i-1),'/');
+        num=bestcom(1,i);
+        fileName=strcat(rootPath,folderPath,'output/',num2str(num-1),'/');
         gpp=ncread(strcat(fileName,'Q_ASSIMI_fluxnetdata_timestep.nc'),'gpp_avg')./pp_scaler;
         gpp_ts=Cal_sim_halfhour_day(gpp,window);
         [f2,pp2]=sis_draw_ts_shading(x_com,gpp_ts(:,1),gpp_ts(:,2:3),cmap(i,:));
@@ -57,10 +60,10 @@ for iff=1:numel(folderName)
     ax.YLim=[0 40];
     ax.XTickLabel=num2str((2000:1:2006)');
 
-    xlabel('GPP(mm d^-^1)');
-    ylabel('Year');
+    ylabel('GPP(g m^-^2 d^-^1)');
+    xlabel('Year');
     box on
     title(titleName{1,iff});
-    print(fig,'-dtiff','-r800',strcat(savepath,titleName{1,iff},'gppts.tif'));%%%%%%%%editable
+    print(fig,'-dtiff','-r800',strcat(savepath,'figs/gppts_',titleName{1,iff},'.tif'));%%%%%%%%editable
     close(fig);
 end
