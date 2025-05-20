@@ -6,7 +6,7 @@ Phenology module & Hydraulics module
 
 1. sis_phenology == abstract the SOS, EOS, LOS
 2. sis_single_parameter_range == find the best paramters combinations
-3. sis_phenology_ts == find the best paramters combinations with rmse
+3. sis_evaluate_phenology == find the best paramters combinations with rmse
 4. sis_gpp_doy / sis_pac_doy / sis_pac_dev_doy / sis_pac_opt_doy == plot the annual mean of GPP, ET
 
 
