@@ -1,7 +1,0 @@
-Prepare forcing data from ERA5
-
-1. Download the ERA5 with CDS API ==  "ERA5 download"
-   1) prepare the CDS API script
-   2) submit the script to cluster
-
-2. Check the downloading file ==
