@@ -1,0 +1,9 @@
+Prepare forcing data from ERA5
+
+1. Download the ERA5 with CDS API ==  "ERA5 download"
+   1) prepare the CDS API script
+   2) submit the script to cluster
+
+2. Check the downloading file == "ERA5 merged"
+   1) check the downloading time period == "sis_check_ERA5"
+   2) merge + seldate + sellonlat + interpolated (CDO script) == "sis_check_ERA5"
